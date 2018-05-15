@@ -2,17 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Used to signal cookie changes to Document contexts.
+// Used to signal cookie changes to ServiceWorker contexts.
 // https://github.com/WICG/async-cookies-api/blob/gh-pages/explainer.md
 //
-// See extendable_cookie_change_event.idl for the equivalent event in
-// ServiceWorker contexts.
+// See cookie_change_event.idl for the equivalent event in Document contexts.
 
 [
-  Exposed=Window,
+  Exposed=ServiceWorker,
   RuntimeEnabled=AsyncCookies,
-  Constructor(DOMString type, optional CookieChangeEventInit eventInitDict)
-] interface CookieChangeEvent : Event {
+  Constructor(DOMString type, optional ExtendableCookieChangeEventInit eventInitDict)
+] interface ExtendableCookieChangeEvent : ExtendableEvent {
   readonly attribute CookieList changed;
   readonly attribute CookieList deleted;
 };
