@@ -36,7 +36,7 @@
       windowsVirtualKeyCode: 9,
       key: 'Tab',
     });
-    return dp.Input.dispatchKeyEvent({
+    dp.Input.dispatchKeyEvent({
       type: 'keyUp',
       windowsVirtualKeyCode: 9,
       key: 'Tab',
@@ -56,7 +56,7 @@
   type('foo');
   typeTab();
   type('bar');
-  await typeTab();
+  typeTab();
   testRunner.log(await session.evaluate(`
     logs.push('================');
     logs.push('value of foo:' + document.getElementById('foo').value);
