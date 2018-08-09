@@ -57,7 +57,8 @@ CanvasResourceDispatcher::CanvasResourceDispatcher(
                                         mojo::MakeRequest(&sink_));
   }
   offscreen_canvas_resource_provider_ =
-      std::make_unique<OffscreenCanvasResourceProvider>();
+      std::make_unique<OffscreenCanvasResourceProvider>(size_.Width(),
+                                                        size_.Height(), this);
 }
 
 CanvasResourceDispatcher::~CanvasResourceDispatcher() = default;
@@ -447,12 +448,15 @@ void CanvasResourceDispatcher::ReclaimResource(viz::ResourceId resource_id) {
 }
 
 bool CanvasResourceDispatcher::VerifyImageSize(const IntSize image_size) {
-  return image_size == size_;
+  if (image_size == size_)
+    return true;
+  return false;
 }
 
 void CanvasResourceDispatcher::Reshape(const IntSize& size) {
   if (size_ != size) {
     size_ = size;
+    offscreen_canvas_resource_provider_->Reshape(size_.Width(), size_.Height());
     change_size_for_next_commit_ = true;
   }
 }
