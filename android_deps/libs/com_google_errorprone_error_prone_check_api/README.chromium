@@ -1,6 +1,6 @@
-Name: error-prone annotations
-Short Name: error_prone_annotations
-URL: https://errorprone.info/
+Name: error-prone check api
+Short Name: error_prone_check_api
+URL: 
 Version: 2.3.1
 License: Apache 2.0
 License File: NOT_SHIPPED

@@ -1,13 +1,13 @@
-Name: FindBugs-jsr305
-Short Name: jsr305
+Name: FindBugs-jFormatString
+Short Name: jFormatString
 URL: http://findbugs.sourceforge.net/
-Version: 3.0.2
-License: Apache Version 2.0
+Version: 3.0.0
+License: GNU Lesser Public License
 License File: NOT_SHIPPED
 Security Critical: no
 
 Description:
-JSR305 Annotations for Findbugs
+jFormatString for Findbugs
 
 Local Modifications:
 No modifications.
