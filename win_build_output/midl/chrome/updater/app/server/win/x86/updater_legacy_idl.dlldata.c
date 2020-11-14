@@ -11,6 +11,7 @@
 
 *********************************************************/
 
+#define PROXY_DELEGATION
 
 #include <rpcproxy.h>
 
@@ -18,12 +19,12 @@
 extern "C"   {
 #endif
 
-EXTERN_PROXY_FILE( updater_idl )
+EXTERN_PROXY_FILE( updater_legacy_idl )
 
 
 PROXYFILE_LIST_START
 /* Start of list */
-  REFERENCE_PROXY_FILE( updater_idl ),
+  REFERENCE_PROXY_FILE( updater_legacy_idl ),
 /* End of list */
 PROXYFILE_LIST_END
 

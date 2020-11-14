@@ -18,12 +18,12 @@
 extern "C"   {
 #endif
 
-EXTERN_PROXY_FILE( updater_idl )
+EXTERN_PROXY_FILE( updater_internal_idl )
 
 
 PROXYFILE_LIST_START
 /* Start of list */
-  REFERENCE_PROXY_FILE( updater_idl ),
+  REFERENCE_PROXY_FILE( updater_internal_idl ),
 /* End of list */
 PROXYFILE_LIST_END
 
