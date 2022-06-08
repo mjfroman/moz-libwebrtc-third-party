@@ -5,6 +5,7 @@
 import("//build_overrides/build.gni")
 import("//third_party/abseil-cpp/absl.gni")
 
+if (!moz_webrtc_build) {
 absl_source_set("hash") {
   sources = [
     "internal/hash.cc",
@@ -123,4 +124,5 @@ absl_test("low_level_hash_test") {
     ":low_level_hash",
     "//third_party/abseil-cpp/absl/strings",
   ]
+}
 }

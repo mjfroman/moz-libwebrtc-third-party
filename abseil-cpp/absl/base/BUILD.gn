@@ -13,10 +13,12 @@ absl_source_set("atomic_hook") {
   visibility = [ "//third_party/abseil-cpp/absl/*" ]
 }
 
+if (!moz_webrtc_build) {
 absl_source_set("errno_saver") {
   public = [ "internal/errno_saver.h" ]
   public_deps = [ ":config" ]
   visibility = [ "//third_party/abseil-cpp/absl/*" ]
+}
 }
 
 absl_source_set("log_severity") {
@@ -50,6 +52,7 @@ absl_source_set("raw_logging_internal") {
   visibility = [ "//third_party/abseil-cpp/absl/*" ]
 }
 
+if (!moz_webrtc_build) {
 absl_source_set("spinlock_wait") {
   sources = [
     "internal/spinlock_akaros.inc",
@@ -65,6 +68,7 @@ absl_source_set("spinlock_wait") {
     ":errno_saver",
   ]
   visibility = [ "//third_party/abseil-cpp/absl/base:*" ]
+}
 }
 
 absl_source_set("config") {
@@ -87,6 +91,7 @@ absl_source_set("cycleclock_internal") {
   ]
 }
 
+if (!moz_webrtc_build) {
 absl_source_set("dynamic_annotations") {
   public = [ "dynamic_annotations.h" ]
 
@@ -97,6 +102,7 @@ absl_source_set("dynamic_annotations") {
     ":config",
     ":core_headers",
   ]
+}
 }
 
 absl_source_set("core_headers") {
@@ -111,6 +117,7 @@ absl_source_set("core_headers") {
   public_deps = [ ":config" ]
 }
 
+if (!moz_webrtc_build) {
 absl_source_set("malloc_internal") {
   sources = [ "internal/low_level_alloc.cc" ]
   public = [
@@ -125,6 +132,7 @@ absl_source_set("malloc_internal") {
     ":dynamic_annotations",
     ":raw_logging_internal",
   ]
+}
 }
 
 absl_source_set("base_internal") {
@@ -142,6 +150,7 @@ absl_source_set("base_internal") {
   visibility = [ "//third_party/abseil-cpp/absl/*" ]
 }
 
+if (!moz_webrtc_build) {
 absl_source_set("base") {
   sources = [
     "internal/cycleclock.cc",
@@ -295,6 +304,7 @@ absl_test("prefetch_test") {
   deps = [ ":prefetch" ]
 }
 
+if (false) {
 absl_test("config_test") {
   sources = [ "config_test.cc" ]
   deps = [
@@ -309,4 +319,6 @@ absl_test("nullability_test") {
     ":core_headers",
     ":nullability",
   ]
+}
+}
 }
