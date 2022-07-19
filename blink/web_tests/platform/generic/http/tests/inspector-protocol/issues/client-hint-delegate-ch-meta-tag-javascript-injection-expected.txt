@@ -1,4 +1,4 @@
-Test JS Injection Accept-CH
+Test JS Injection Delegate-CH
 Inspector issue: {
     issue : {
         code : ClientHintIssue
@@ -9,7 +9,7 @@ Inspector issue: {
                     columnNumber : 33
                     lineNumber : 6
                     scriptId : <string>
-                    url : https://devtools.test:8443/inspector-protocol/resources/client-hint-accept-ch-meta-tag-javascript-injection.html
+                    url : https://devtools.test:8443/inspector-protocol/resources/client-hint-delegate-ch-meta-tag-javascript-injection.html
                 }
             }
         }
