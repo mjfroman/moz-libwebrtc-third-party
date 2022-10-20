@@ -16,6 +16,7 @@ absl_source_set("any_invocable") {
   ]
 }
 
+if (!moz_webrtc_build) {
 absl_test("any_invocable_test") {
   sources = [
     "any_invocable_test.cc",
@@ -29,6 +30,7 @@ absl_test("any_invocable_test") {
     "//third_party/abseil-cpp/absl/meta:type_traits",
     "//third_party/abseil-cpp/absl/utility",
   ]
+}
 }
 
 absl_source_set("bind_front") {
