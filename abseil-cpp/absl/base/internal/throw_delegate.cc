@@ -26,6 +26,10 @@ namespace absl {
 ABSL_NAMESPACE_BEGIN
 namespace base_internal {
 
+#ifdef ABSL_HAVE_EXCEPTIONS
+static_assert(false, "Mozilla - ABSL_HAVE_EXCEPTIONS has been turned on");
+#endif
+
 // NOTE: The exception types, like `std::logic_error`, do not exist on all
 // platforms. (For example, the Android NDK does not have them.)
 // Therefore, their use must be guarded by `#ifdef` or equivalent.
