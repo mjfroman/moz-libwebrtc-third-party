@@ -66,6 +66,15 @@ ABSL_NAMESPACE_END
 namespace absl {
 ABSL_NAMESPACE_BEGIN
 
+// Mozilla added - quiets misused comma warnings resulting from
+// frequent use of the pattern:
+//     return ABSL_HARDENING_ASSERT(i < size()), ptr_[i];
+// TODO: https://bugzilla.mozilla.org/show_bug.cgi?id=1796623
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wcomma"
+#endif
+
 // absl::string_view
 //
 // A `string_view` provides a lightweight view into the string data provided by
@@ -673,6 +682,10 @@ ABSL_NAMESPACE_END
 }  // namespace absl
 
 #undef ABSL_INTERNAL_STRING_VIEW_MEMCMP
+
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
 
 #endif  // ABSL_USES_STD_STRING_VIEW
 
